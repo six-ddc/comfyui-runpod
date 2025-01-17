@@ -28,11 +28,11 @@ function provisioning_start() {
     fi
 
     $COMFYUI_VENV/bin/huggingface-cli download mcmonkey/cosmos-1.0 \
-        Cosmos-1_0-Diffusion-14B-Video2World.safetensors \
-        Cosmos-1_0-Diffusion-14B-Text2World.safetensors \
+        Cosmos-1_0-Diffusion-7B-Text2World.safetensors \
+        Cosmos-1_0-Diffusion-7B-Video2World.safetensors \
         --local-dir "${WORKSPACE}/storage/stable_diffusion/models/diffusion_models"
-    # Cosmos-1_0-Diffusion-7B-Text2World.safetensors \
-    # Cosmos-1_0-Diffusion-7B-Video2World.safetensors \
+    # Cosmos-1_0-Diffusion-14B-Video2World.safetensors \
+    # Cosmos-1_0-Diffusion-14B-Text2World.safetensors \
 
     $COMFYUI_VENV/bin/huggingface-cli download comfyanonymous/cosmos_1.0_text_encoder_and_VAE_ComfyUI \
         text_encoders/oldt5_xxl_fp8_e4m3fn_scaled.safetensors \
