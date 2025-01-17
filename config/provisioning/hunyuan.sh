@@ -6,6 +6,7 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
+    "hf_transfer"
     "huggingface_hub[hf_transfer]"
 )
 
@@ -23,19 +24,19 @@ function provisioning_start() {
 
     export HF_HUB_ENABLE_HF_TRANSFER=1
     if [[ -n $HF_TOKEN ]]; then
-        huggingface-cli login --token "$HF_TOKEN"
+        $COMFYUI_VENV/bin/huggingface-cli login --token "$HF_TOKEN"
     fi
 
-    huggingface-cli download Comfy-Org/HunyuanVideo_repackaged \
+    $COMFYUI_VENV/bin/huggingface-cli download Comfy-Org/HunyuanVideo_repackaged \
         split_files/diffusion_models/hunyuan_video_t2v_720p_bf16.safetensors \
         --local-dir "${WORKSPACE}/storage/stable_diffusion/models/diffusion_models"
 
-    huggingface-cli download Comfy-Org/HunyuanVideo_repackaged \
+    $COMFYUI_VENV/bin/huggingface-cli download Comfy-Org/HunyuanVideo_repackaged \
         split_files/text_encoders/clip_l.safetensors \
         split_files/text_encoders/llava_llama3_fp8_scaled.safetensors \
         --local-dir "${WORKSPACE}/storage/stable_diffusion/models/text_encoders"
 
-    huggingface-cli download Comfy-Org/HunyuanVideo_repackaged \
+    $COMFYUI_VENV/bin/huggingface-cli download Comfy-Org/HunyuanVideo_repackaged \
         split_files/vae/hunyuan_video_vae_bf16.safetensors \
         --local-dir "${WORKSPACE}/storage/stable_diffusion/models/vae"
 
