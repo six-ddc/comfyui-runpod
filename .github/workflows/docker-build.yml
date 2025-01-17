@@ -18,7 +18,7 @@ jobs:
         build:
           - {
               latest: "false",
-              comfyui: "v0.2.7",
+              comfyui: "v0.3.12",
               python: "3.10",
               pytorch: "2.5.1",
             }
@@ -92,14 +92,14 @@ jobs:
         build:
           - {
               latest: "false",
-              comfyui: "v0.2.7",
+              comfyui: "v0.3.12",
               python: "3.10",
               pytorch: "2.5.1",
               cuda: "12.1.1-base",
             }
           - {
               latest: "false",
-              comfyui: "v0.2.7",
+              comfyui: "v0.3.12",
               python: "3.10",
               pytorch: "2.5.1",
               cuda: "12.1.1-cudnn8-devel",
@@ -174,7 +174,7 @@ jobs:
         build:
           - {
               latest: "false",
-              comfyui: "v0.2.7",
+              comfyui: "v0.3.12",
               python: "3.10",
               pytorch: "2.3.1",
               rocm: "6.0-runtime",
